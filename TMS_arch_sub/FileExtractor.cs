@@ -24,11 +24,14 @@ namespace TMS_arch_sub
                 
                 XDocument xmlStr = XDocument.Load(file.FullName);
                 XNamespace namespac = "http://sdl.com/FileTypes/SdlXliff/1.0";
-                XElement origPath = from origp in xmlStr.Root
+                XElement origPath = from origp in xmlStr.namespac.Root
                                     where o => o.Name == "file"
                                     select node => new { original = node.Attribute("original").Value, 
                                                          tarlang = node.Attribute("target-language").Value};
-
+                /*XElement origPath = 
+                    from origp in xmlStr.Root.Elements("file")
+                    where (string)origp.Attribute("original") != null
+                    select origp.Attribute("original");*/
                 Console.WriteLine();
             }
             return null;

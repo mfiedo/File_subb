@@ -15,7 +15,7 @@ namespace TMS_arch_sub
             FileExtractor fileExtractor = new FileExtractor();
             DirectoryInfo inputFolder = new DirectoryInfo(path);
             var list = fileExtractor.ExtractFiles(inputFolder);
-
+            
             Console.ReadKey();
         }
     }
